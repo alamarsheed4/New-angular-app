@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            Parent Component
+        </div>
+
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="" class="form-label">
+                    Employee Name
+                </label>
+                <input type="text" class="form-control"
+                  [(ngModel)] = 'employeeName'>
+
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">
+                    Employee Role
+                </label>
+                <input type="text" class="form-control"
+                  [(ngModel)] = 'employeeRole'>
+
+            </div>
+
+            <app-input-child 
+            [tradEmployeeName]="employeeName"
+            [traditionalEmployeeRole]="employeeRole">   
+            </app-input-child>
+
+        </div>
+
+    </div>
+</div>
+
