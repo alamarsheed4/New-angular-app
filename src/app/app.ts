@@ -1,12 +1,13 @@
 import { Component} from '@angular/core';
-import { InputParent } from './input-parent/input-parent';
+import { OutputParent } from './output-parent/output-parent';
 @Component({
-  imports: [InputParent],
+  imports: [OutputParent],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
+
 
 
 }

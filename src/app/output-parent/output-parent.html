@@ -1,0 +1,48 @@
+<p>output-parent works!</p>
+
+<div class="container mt-5">
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <i class="bi bg-phone me-2"></i>
+            Parent Component - Message Receiver
+        </div>
+        <div class="card-body">
+
+        <!-- Child Component-->
+        <div class="m-4">
+        <app-output-child 
+        (traditionalEmployeeAction)="receiveTraditionalOutput($event)"
+        (ModernEmployeeAction)="receiveModernOutput($event)">
+
+        </app-output-child>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card border-primary h-100">
+
+                <div class="card-header bg-primary text-white">
+                    <i class="bi bi-phone-vibrate me-2"></i>
+                    Parent Phone @output()
+
+                </div>
+
+                <div class="card-body">
+                    <p class="text-muted">
+                    Message received from the child:
+                    </p>
+
+                <div class="alert alert-success mb-0">
+                <i class="bi bi-chat-left-text me-2"></i>
+                <!-- Message from Parent -->
+                 {{receivedTraditionalMessage}}
+              </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+
+    </div>
+</div>

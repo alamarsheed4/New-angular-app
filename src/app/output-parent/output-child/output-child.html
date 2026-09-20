@@ -1,0 +1,53 @@
+<!-- <h1>Child Component</h1> -->
+
+<div class="card border-secondary">
+
+    <div class="card-header bg-secondary text-white">
+        <i class="bi bi-phone me-2"></i>
+        Child Component Message Sender
+    </div>
+
+    <div class="card-body">
+        <div class="row g-4">
+            <!-- Traditional @output() example -->
+             <div class="col-md-6">
+                <div class="border rounded p-3 h-100">
+
+                    <h5 class="text-primary">
+                        <i class="bi bi-send me-2"></i>
+                        Send using @output()
+                    </h5>
+
+                    <label class="form-label" for="">
+                        Type a message from Child Component
+                    </label>
+                     <textarea
+                        class="form-control mb-3"
+                        rows="3"
+                        [(ngModel)]="traditionalMessageText"
+                        >
+                    </textarea>
+
+                     <button
+                        class="btn btn-primary w-100"
+                        (click)="sendTraditionalMessage()"
+                        >
+
+                        <i class="bi bi-send-fill me-2"></i>
+                        Send Message to Parent with @Output
+                    </button>
+
+                     <button
+                        class="btn btn-success w-100 mt-4"
+                        (click)="sendModernMessage()"
+                        >
+
+                        <i class="bi bi-send-fill me-2"></i>
+                        Send Message to Parent with output Signal
+                    </button>
+
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
