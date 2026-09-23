@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
-import { OutputParent } from './output-parent/output-parent';
+import { TraditionalTwoWayParent } from './traditional-two-way-parent/traditional-two-way-parent';
 @Component({
-  imports: [OutputParent],
+  imports: [TraditionalTwoWayParent],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

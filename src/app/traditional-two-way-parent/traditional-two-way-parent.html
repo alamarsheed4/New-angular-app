@@ -1,0 +1,38 @@
+<p>traditional-two-way-parent works!</p>
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            Parent Component
+        </div>
+        <div class="card-body mt-3">
+            <label for="" class="form-label">
+                Parent Quantity
+            </label>
+
+            <input type="text"
+            class="form-control"
+            [(ngModel)]="parentQuantity">
+        </div>
+        <div class="m-3">
+        <button class="btn btn-info mb-3"
+        (click)="ResetQuantity()">
+            Reset Parent Quantity
+        </button>
+        </div>
+        <!-- <app-traditional-two-way-child
+        [childQuantity] = "parentQuantity"
+        (changeQuantity)="parentQuantity">
+
+        </app-traditional-two-way-child> -->
+
+         <app-traditional-two-way-child
+        [(childQuantity)] = "parentQuantity">
+        </app-traditional-two-way-child>
+
+        <div class="alert alert-info mt-4 mb-0">
+            <strong>Parent Quantity:</strong>
+            {{parentQuantity}}
+        </div>
+
+    </div>
+</div>

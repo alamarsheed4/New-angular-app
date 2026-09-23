@@ -1,0 +1,29 @@
+<div class="container">
+
+    <div class="card shadow-sm mb-3">
+
+        <div class="card-header bg-primary text-white">
+            Child Component
+        </div>
+
+        <div class="card-body mt-3">
+            <div class="mt-3">
+                <label for="" class="form-label">
+                    Child Quantity:
+                </label>
+                {{childQuantity()}}
+                 </div>
+                
+              <button class="mr-4 btn btn-success"
+              (click)="increaseQuantity()">
+                    Increase +
+                </button>
+                &nbsp;&nbsp;
+                <button class="btn btn-info"
+                (click)="decreaseQuantity()">
+                    Decrease -
+                </button>
+          
+        </div>
+    </div>
+</div>
