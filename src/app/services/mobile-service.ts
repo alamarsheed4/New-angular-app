@@ -28,4 +28,8 @@ import { Injectable } from "@angular/core";
     ];
   }
 
+   getWelcomeMessage(){
+    return 'WELCOME TO INNOVATIVE MOBILE STORE'
+  }
+
 }
