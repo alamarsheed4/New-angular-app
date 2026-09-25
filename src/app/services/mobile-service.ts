@@ -1,12 +1,20 @@
-import { Injectable, signal } from "@angular/core";
+import { inject, Injectable, signal } from "@angular/core";
+import { loggerService } from "./logger.service";
  
 @Injectable({           //Injectable creates instance for services implicitly, No need to create instance for your services
     providedIn: 'root'
 })  
   export class MobileServices{
 
+    private loggerService = inject(loggerService);
+
     selectedMobileName = signal('No mobile selected')
     
+    // loggerService = new LoggerService(); 
+     constructor(private LoggerService : loggerService){
+
+ }
+
   getMobiles() {
     return [
       {
@@ -41,6 +49,9 @@ import { Injectable, signal } from "@angular/core";
   //   return filteredData;
 
   this.selectedMobileName.set(`${brand} ${model}`)
-  }
+  this.loggerService.log(`${brand} ${model} was selected from mobile List Component.`)
+  
+  var text = "hello";
+}
 }
 

@@ -19,9 +19,9 @@ export class MobileList implements OnInit {
  //for capture service
  mobilePreviewService = inject(MobilePreviewService)
 
- constructor(private LoggerService : loggerService){
+//  constructor(private LoggerService : loggerService){
 
- }
+//  }
 
  mobiles:any;
 
@@ -46,7 +46,8 @@ export class MobileList implements OnInit {
       this.mobileService.selectMobile(brand, model);
 
       this.mobilePreviewService.selectPreview(brand, model);
-      this.LoggerService.log(`${brand} ${model} was selected from mobile List Component.`)
-  }
+     // this.LoggerService.log(`${brand} ${model} was selected from mobile List Component.`)
+  
+    }
 
 }
