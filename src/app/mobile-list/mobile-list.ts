@@ -30,4 +30,10 @@ export class MobileList implements OnInit {
 
 //}
 
+    selectedMobile(brand:string, model:string){
+
+      this.mobileService.selectMobile(brand, model);
+      
+  }
+
 }

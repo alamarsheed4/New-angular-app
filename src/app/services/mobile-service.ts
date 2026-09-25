@@ -1,9 +1,11 @@
-import { Injectable } from "@angular/core";
+import { Injectable, signal } from "@angular/core";
  
 @Injectable({           //Injectable creates instance for services implicitly, No need to create instance for your services
     providedIn: 'root'
 })  
   export class MobileServices{
+
+    selectedMobileName = signal('No mobile selected')
     
   getMobiles() {
     return [
@@ -32,4 +34,13 @@ import { Injectable } from "@angular/core";
     return 'WELCOME TO INNOVATIVE MOBILE STORE'
   }
 
+  selectMobile(brand: string, model:string){
+  //  var filteredData= this.getMobiles().filter(x=> {
+  //     return x.brand == brand && x.model == model}
+  //   );
+  //   return filteredData;
+
+  this.selectedMobileName.set(`${brand} ${model}`)
+  }
 }
+
