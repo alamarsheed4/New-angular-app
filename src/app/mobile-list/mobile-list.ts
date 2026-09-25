@@ -1,17 +1,22 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MobileServices } from '../services/mobile-service';
+import { MobilePreview } from '../mobile-preview/mobile-preview';
+import { MobilePreviewService } from '../services/mobile-preview.service';
 
 @Component({
-  imports: [],
+  imports: [MobilePreview],
   selector: 'app-mobile-list',
   styleUrl: './mobile-list.css',
   templateUrl: './mobile-list.html',
+  providers: [MobilePreviewService]  //register at component level
 })
 export class MobileList implements OnInit {
 
 
  mobileService = inject(MobileServices);  //inject will inject your services here after importing service file
 
+ //for capture service
+ mobilePreviewService = inject(MobilePreviewService)
  mobiles:any;
 
  wecomeMessage !:string
@@ -33,6 +38,8 @@ export class MobileList implements OnInit {
     selectedMobile(brand:string, model:string){
 
       this.mobileService.selectMobile(brand, model);
+
+      this.mobilePreviewService.selectPreview(brand, model);
       
   }
 
