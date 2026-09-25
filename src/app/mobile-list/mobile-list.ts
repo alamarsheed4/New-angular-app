@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { MobileServices } from '../services/mobile-service';
 import { MobilePreview } from '../mobile-preview/mobile-preview';
 import { MobilePreviewService } from '../services/mobile-preview.service';
+import { loggerService } from '../services/logger.service';
 
 @Component({
   imports: [MobilePreview],
@@ -17,6 +18,11 @@ export class MobileList implements OnInit {
 
  //for capture service
  mobilePreviewService = inject(MobilePreviewService)
+
+ constructor(private LoggerService : loggerService){
+
+ }
+
  mobiles:any;
 
  wecomeMessage !:string
@@ -40,7 +46,7 @@ export class MobileList implements OnInit {
       this.mobileService.selectMobile(brand, model);
 
       this.mobilePreviewService.selectPreview(brand, model);
-      
+      this.LoggerService.log(`${brand} ${model} was selected from mobile List Component.`)
   }
 
 }
