@@ -1,0 +1,26 @@
+<!-- <p>payment works!</p> -->
+
+<div class="card shadow h-100">
+    <div class="card-header bg-warning">
+        <h4 class="mb-0">
+            Payment Component
+        </h4>
+    </div>
+
+    <div class="card-body">
+        <h6>Selected Mobile</h6>
+
+        <p class="text-primary">
+            {{mobileService.selectedMobileName()}}
+        </p>
+
+        <button
+        class="btn btn-warning" (click)="makePayment()" >
+            Payment
+        </button>
+
+        <div class="alert alert-warning mt-3 mb-0">
+            {{paymentMessage()}}
+        </div>
+    </div>
+</div>

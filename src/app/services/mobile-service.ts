@@ -1,5 +1,6 @@
 import { inject, Injectable, signal } from "@angular/core";
 import { loggerService } from "./logger.service";
+import { Api_URL } from "../tokens/app.token";
  
 @Injectable({           //Injectable creates instance for services implicitly, No need to create instance for your services
     providedIn: 'root'
@@ -7,6 +8,8 @@ import { loggerService } from "./logger.service";
   export class MobileServices{
 
     private loggerService = inject(loggerService);
+
+    private apiURL = inject(Api_URL)
 
     selectedMobileName = signal('No mobile selected')
     
@@ -16,6 +19,9 @@ import { loggerService } from "./logger.service";
  }
 
   getMobiles() {
+    
+  this.loggerService.log(`Mobile data requested from the web APi URL ${this.apiURL}`)
+    
     return [
       {
         id: 1,
@@ -51,7 +57,7 @@ import { loggerService } from "./logger.service";
   this.selectedMobileName.set(`${brand} ${model}`)
   this.loggerService.log(`${brand} ${model} was selected from mobile List Component.`)
   
-  var text = "hello";
+  //var text = "hello";
 }
 }
 
