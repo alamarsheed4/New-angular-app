@@ -3,3 +3,11 @@ app-root{
     min-height: 100vh;
     background-color: #f4f7fb;
 }
+.app-page{
+    background: #00215e;
+}
+.logo-circle{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
