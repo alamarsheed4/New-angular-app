@@ -1,41 +1,49 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component} from '@angular/core';
 @Component({
   imports: [],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
+  host: {
+    '[style.color]': 'fontColor',
+    '[style.font-weight]': 'fweight',
+    '[style.background-color]': 'bColor',
+    '[style.display]': 'display',
+    '[style.font-size]': 'fontSize',
+    '(mouseenter)':'onmouseEnter()',
+    '(mouseleave)':'onmouseLeave()',
+    '(click)':'onmouseClick()'
+
+  }
 })
 export class App {
 
+  fontColor = 'blue'
+  fweight = 'bold'
+  bColor = 'green'
+  display = 'block'
+  fontSize = '20px'
 
-  EmployeeName = signal("Peter");
-
-  basicSalary = signal(30000);
-
-  yearlySalary = computed(()=>this.basicSalary() * 12)
-
-  constructor(){
-    effect(()=>{
-      console.log(
-        `Employee Name: ${this.EmployeeName()} || ${this.basicSalary()}`
-      );
-      
-    });
+  onmouseEnter(){
+    this.fontColor = 'rgb(18, 156, 206)'
+    this.bColor = 'rgb(206, 122, 5)'
+    this.fweight= 'bolder'
+    this.fontSize= '60px'
   }
 
-  ChangeName(){
-    this.EmployeeName.set('Robert Jr.')
+  onmouseLeave(){
+    this.fontColor = 'rgb(157, 16, 222)'
+    this.bColor = 'rgb(206, 193, 5)'
+    this.fweight= 'bolder'
+    this.fontSize= '30px'
   }
 
-  setSalary(){
-   this.basicSalary.set(50000)
-   
+  onmouseClick(){
+     this.fontColor = 'rgba(61, 222, 16, 1)'
+    this.bColor = 'rgba(5, 132, 206, 1)'
+    this.fweight= 'bolder'
+    this.fontSize= '70px'
   }
 
-  updateSalary(){
-    this.basicSalary.update(currentSalary=>
-      currentSalary + 5000
-    )
-  }
-
+  
 }
