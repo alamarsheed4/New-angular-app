@@ -1,0 +1,12 @@
+p{
+    background-color: yellow;
+    padding: 15px;
+}
+
+button{
+    background-color: green;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none
+}
