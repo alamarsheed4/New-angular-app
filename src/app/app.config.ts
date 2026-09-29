@@ -2,6 +2,9 @@ import { ApplicationConfig } from '@angular/core';
 import { App_Name, Api_URL } from './tokens/app.token';
 import { PaymentGateway } from './services/payment-gateway.service';
 import { creditCardPayment } from './services/creditcard-payment.service';
+import { NotificationService } from './services/notifications/notification-service';
+import { EmailNotificationService } from './services/notifications/email-notification-service';
+import { UPIPayment } from './services/upi-payment.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,7 +18,11 @@ export const appConfig: ApplicationConfig = {
     },
     {
       provide : PaymentGateway,
-      useClass: creditCardPayment
+      useClass: UPIPayment
+    },
+    {
+      provide : NotificationService,
+      useClass: EmailNotificationService
     },
   ]
 };

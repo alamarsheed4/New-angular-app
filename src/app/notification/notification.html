@@ -1,0 +1,22 @@
+<!-- <p>notification works!</p> -->
+
+<div class="card shadow ">
+    <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">
+            Notification Component
+        </h4>
+    </div>
+
+    <div class="card-body">
+        @if(notificationLogService.notifications().length == 0){
+        <div class="alert alert-secondary mb-0">
+            No notification yet
+        </div>
+        }
+        @for(notification of notificationLogService.notifications(); track $index){
+        <div class="alert alert-info mb-2">
+            {{notification}}
+        </div>
+    }
+    </div>
+</div>
