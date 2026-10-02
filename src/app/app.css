@@ -1,7 +1,16 @@
+/* Host Element is a inline element by default */
 /* :host{
-    display: block;
+   
+    display: block;   
+    background-color: rgb(206, 193, 5);
+    font-size: 46px;
+    font-weight: bold;
+    color: blue;
+} */
+
+/* :host div[firstDiv] {
     background-color: rgb(206, 193, 5);
     font-size: 25px;
     font-weight: bold;
-    color: blue;
+    color: rgb(9, 255, 0);
 } */
